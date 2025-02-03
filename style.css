@@ -1,0 +1,863 @@
+/* style.css */
+
+/* Definição de fontes personalizadas */
+@font-face {
+    font-family: 'TituloFonte';
+    src: url('./Fontes/Tamil\ Sangam\ MN.ttc') format('ttc'),
+         url('./Fontes/MinionVariableConcept-Roman.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TextoFonte';
+    src: url('./Fontes/Tamil\ Sangam\ MN.ttc') format('ttc'),
+         url('./Fontes/MinionVariableConcept-Roman.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Estilo geral do corpo da página */
+body {
+    font-family: 'TextoFonte', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fefaef;
+    color: #005981;
+    text-align: center;
+}
+
+/* Estilo para o menu de navegação e títulos */
+.navbar,
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'TituloFonte', 'Georgia', serif;
+    position: relative;
+}
+
+/* Estilo da barra de navegação */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fefaef;
+    border-bottom: 2px solid #eee;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 70px;
+    margin-left: 30px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 70px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #005981;
+    font-family: 'TituloFonte', 'Georgia', serif;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #005981;
+}
+
+.menu-icon {
+    display: none;
+    background-color: #005981;
+}
+
+/* Estilo da caixa "Sobre" */
+.about-box {
+    margin: 50px auto;
+    padding: 20px 40px;
+    max-width: 500px;
+    position: relative;
+}
+
+.about-box::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    z-index: -1;
+}
+
+.about-box h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #005981;
+    margin-bottom: 35px;
+    margin-top: -10px;
+}
+
+.about-box p {
+    font-size: 1rem;
+    line-height: 1;
+    color: #808285;
+}
+
+/* Estilo da seção de contagem regressiva */
+#countdown {
+    text-align: center;
+    padding: 10px;
+    opacity: 90%;
+}
+
+#countdown h2 {
+    font-size: 2rem;
+    color: #005981;
+    margin-bottom: 15px;
+    margin-top: 65px;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.timer div {
+    text-align: center;
+}
+
+.value {
+    font-family: 'TituloFonte', Georgia, serif;
+    font-size: 1.3rem;
+    color: #005981;
+    display: block;
+    margin-bottom: 2px;
+    opacity: 70%;
+}
+
+.label {
+    font-family: 'TextoFonte', Arial, sans-serif;
+    font-size: 1.3rem;
+    color: #005981;
+    letter-spacing: 0.05rem;
+    opacity: 70%;
+}
+
+/* Estilo da seção de programação */
+#programacao {
+    background-color: #fefaef;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#programacao h2 {
+    font-size: 2rem;
+    color: #005981;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.programacao-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.programacao-card-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.programacao-card {
+    border-radius: 10px;
+    padding: 20px 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    max-width: 300px;
+    position: relative;
+    height: 290px;
+}
+
+.programacao-card h3 {
+    font-size: 1.2rem;
+    color: #005981;
+    margin-bottom: 10px;
+}
+
+.programacao-card img {
+    width: 110px;
+    margin: 10px auto;
+}
+
+.programacao-card p {
+    font-size: 1rem;
+    color: #808280;
+    line-height: 1;
+    margin: 0;
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Estilo do botão "Saiba Mais" */
+.botao-saiba-mais {
+    display: inline-block;
+    text-decoration: none;
+    color: #005981;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 30px;
+    border: 1px solid #808285;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.botao-saiba-mais:hover {
+    background-color: #005981;
+    color: white;
+}
+
+/* Estilos para cabeçalhos com vídeo */
+.video-header, .video-countdown-bg, .video-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.video-header {
+    height: 500px;
+}
+
+.video-countdown-bg, .video-bg {
+    height: 300px;
+}
+
+.video-header video, .video-countdown-bg video, .video-bg video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -1;
+    opacity: 40%;
+}
+
+.video-header video {
+    top: 63%;
+}
+
+/* Estilo para a imagem da concha */
+.concha {
+    width: 25%;
+}
+
+/* Estilo para a imagem sobreposta */
+.overlay-image {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 500px;
+    height: auto;
+    opacity: 100%;
+}
+
+/* Estilo para as seções principais */
+main section {
+    padding: 50px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Estilo do rodapé */
+footer {
+    text-align: left;
+    padding: 10px 0;
+    background-color: #808285;
+    color: #005981;
+    font-size: 1.3rem;
+}
+
+/* Estilo geral da seção "Como Chegar" */
+#directions {
+    background-color: #fefaef;
+    padding: 0px 20px;
+    text-align: center;
+    font-family: 'TextoFonte', Arial, sans-serif;
+}
+
+#directions h2 {
+    font-size: 2rem;
+    color: #005981;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.directions-section h3 {
+    font-size: 1.5rem;
+    color: #005981;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.directions-section p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #808285;
+    text-align: center;
+    margin: 0 auto 40px;
+    max-width: 650px;
+}
+
+.directions-section img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 20px 0;
+}
+
+.directions-card-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.directions-card {
+    padding: 20px 15px;
+    text-align: center;
+    width: 100%;
+    max-width: 200px;
+    position: relative;
+    height: 350px;
+}
+
+.directions-card h3 {
+    font-size: 1.2rem;
+    color: #005981;
+    margin-bottom: 10px;
+}
+
+.directions-card img {
+    width: 100px;
+    margin: 10px auto;
+}
+
+.directions-card p {
+    font-size: 1rem;
+    color: #808285;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+/* Estilo da seção Hospedagem */
+#hospedagem {
+    background-color: #fefaef;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hospedagem-container h2 {
+    font-size: 2.5rem;
+    color: #005981;
+    margin-bottom: 40px;
+}
+
+.hospedagem-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.hospedagem-item {
+    text-align: center;
+    text-decoration: none;
+    color: #005981;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.hospedagem-item img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hospedagem-item:hover {
+    transform: scale(1.05);
+}
+
+.mais-opcoes-btn {
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #005981;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mais-opcoes-btn:hover {
+    background-color: #003f62;
+}
+
+/* Modal hospedagem */
+.hospedagem-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 50%;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content h3 {
+    font-size: 1.5rem;
+    color: #005981;
+    margin-bottom: 20px;
+}
+
+.hospedagem-lista {
+    list-style-type: none;
+    padding: 0;
+}
+
+.hospedagem-lista li {
+    margin-bottom: 10px;
+}
+
+.hospedagem-lista a {
+    text-decoration: none;
+    color: #005981;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.hospedagem-lista a:hover {
+    color: #003f62;
+}
+
+/* Botão Fechar do modal */
+.fechar {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #005981;
+}
+
+/* Seção Dicas */
+#dicas {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.dicas-container h2 {
+    font-size: 2.5rem;
+    color: #005981;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.dicas-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.dica-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.dica-item img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.dica-item button {
+    background-color: transparent;
+    border: 1px solid #005981;
+    color: #005981;
+    font-family: 'TextoFonte', Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dica-item:hover {
+    transform: scale(1.05);
+}
+
+.dica-item button:hover {
+    background-color: #005981;
+    color: #ffffff;
+}
+
+/* Estilo dos Modais */
+.dica-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 50%;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content h3 {
+    font-family: 'TituloFonte', Georgia, serif;
+    color: #005981;
+    margin-bottom: 20px;
+}
+
+.modal-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.modal-content ul li {
+    font-family: 'TextoFonte', Arial, sans-serif;
+    font-size: 1rem;
+    color: #005981;
+    margin-bottom: 10px;
+}
+
+/* Seção RSVP */
+#rsvp {
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.rsvp-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 2px solid #005981;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.rsvp-form h2 {
+    font-family: 'TituloFonte', Georgia, serif;
+    font-size: 2rem;
+    color: #005981;
+    margin-bottom: 20px;
+}
+
+.rsvp-form label {
+    font-family: 'TextoFonte', Arial, sans-serif;
+    font-size: 1rem;
+    color: #005981;
+    display: block;
+    margin: 10px 0 5px;
+    text-align: left;
+}
+
+.rsvp-form input,
+.rsvp-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #005981;
+    border-radius: 5px;
+    font-family: 'TextoFonte', Arial, sans-serif;
+    font-size: 1rem;
+    color: #005981;
+    background-color: #fefefe;
+    transition: border-color 0.3s ease;
+}
+
+.rsvp-form input:focus,
+.rsvp-form select:focus {
+    border-color: #005981;
+    outline: none;
+}
+
+.date-fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.date-fields input,
+.date-fields select {
+    width: 30%;
+}
+
+.rsvp-form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #005981;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rsvp-form button:hover {
+    background-color: #005981;
+}
+
+/* Estilos específicos para os novos modais de Programação e Como Chegar */
+#modalWelcomeDrinks .modal-content,
+#modalDiaLivre .modal-content,
+#modalCasamento .modal-content,
+#modalTaxi .modal-content,
+#modalTransfer .modal-content,
+#modalAlugarCarro .modal-content {
+    background-color: #fefaef;
+    border: 2px solid #005981;
+}
+
+#modalWelcomeDrinks h3,
+#modalDiaLivre h3,
+#modalCasamento h3,
+#modalTaxi h3,
+#modalTransfer h3,
+#modalAlugarCarro h3 {
+    color: #005981;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+#modalWelcomeDrinks p,
+#modalDiaLivre p,
+#modalCasamento p,
+#modalTaxi p,
+#modalTransfer p,
+#modalAlugarCarro p {
+    color: #808285;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Media queries para responsividade */
+@media screen and (max-width: 1024px) {
+    .nav-links li {
+        margin: 0 30px;
+    }
+
+    .programacao-card-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .programacao-card {
+        width: calc(50% - 25px);
+    }
+
+    .overlay-image {
+        width: 80%;
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 30px;
+        background-color: #005981;
+        border: none;
+        border-radius: 5px;
+        padding: 5px;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 60px;
+        z-index: 1000;
+    }
+
+    .menu-icon span {
+        display: block;
+        width: 100%;
+        height: 4px;
+        background: #fff;
+        border-radius: 2px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .menu-icon.active span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    .menu-icon.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-icon.active span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fefaef;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .about-box {
+        padding: 15px;
+        border-radius: 30px;
+    }
+
+    .about-box::after {
+        top: -11px;
+        left: -11px;
+        right: -11px;
+        bottom: -11px;
+        border-radius: 41px;
+    }
+
+    .programacao-card {
+        width: 50%;
+        max-width: none;
+    }
+
+    .video-header {
+        height: 400px;
+    }
+
+    .video-header video {
+        top: 130%;
+        transform: translate(-50%, -70%);
+    }
+
+    .video-countdown-bg,
+    .video-bg {
+        height: 200px;
+    }
+
+    .overlay-image {
+        top: 54%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    #countdown h2 {
+        font-size: 1.5rem;
+        margin-top: 50px;
+        margin-bottom: 3px;
+        opacity: 90%;
+    }
+
+    .timer {
+        gap: 15px;
+    }
+
+    .value {
+        font-size: 0.75rem;
+    }
+
+    .label {
+        font-size: 0.65rem;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .nav-links {
+        display: flex !important;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+}

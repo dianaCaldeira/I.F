@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Casamento Isadora e Felipe - Informações e RSVP">
+  <title>Isadora & Felipe</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Menu principal">
+      <div class="logo">
+        <a href="#about" aria-label="Início - Isadora e Felipe">
+          <img src="./imagens/monograma.png" alt="Monograma Isadora e Felipe" loading="eager">
+        </a>
+      </div>
+      <button class="menu-icon" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-menu" role="menu">
+        <li role="none"><a href="#about" role="menuitem">BOAS-VINDAS</a></li>
+        <li role="none"><a href="#programacao" role="menuitem">PROGRAMAÇÃO</a></li>
+        <li role="none"><a href="#directions" role="menuitem">COMO CHEGAR</a></li>
+        <li role="none"><a href="#hospedagem" role="menuitem">HOSPEDAGEM</a></li>
+        <li role="none"><a href="#dicas" role="menuitem">DICAS</a></li>
+        <li role="none"><a href="#rsvp" role="menuitem">R.S.V.P</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="video-header">
+    <video autoplay muted loop>
+      <source src="./video/video01.mp4" type="video/mp4">
+    </video>
+    <img class="overlay-image" src="./imagens/nomes.png" alt="Logo Sobre o Vídeo">
+  </div>
+
+  <main>
+    <section id="about">
+      <div class="about-box">
+        <img class="concha" src="./imagens/concha.png" alt="Concha decorativa">
+        <h2>Bem-vindos!</h2>
+        <p>
+          Estamos muito felizes em compartilhar com vocês esse momento tão especial e esperado!<br><br>
+          Neste site vocês encontrarão dicas sobre hospedagem, restaurantes e como aproveitar ao máximo esses
+          dias no paraíso.<br><br>
+          Esperamos cada um de vocês para comemorarmos e curtirmos muito. Temos certeza que será um final de
+          semana maravilhoso e inesquecível para todos nós!<br><br>
+          Nos vemos em Milagres!
+        </p>
+      </div>
+    </section>
+    <div class="video-countdown-bg">
+      <section id="countdown">
+        <h2>Faltam</h2>
+        <div class="timer">
+          <div>
+            <span class="value" id="days">72</span>
+            <span class="label">Dias</span>
+          </div>
+          <div>
+            <span class="value" id="hours">08</span>
+            <span class="label">Horas</span>
+          </div>
+          <div>
+            <span class="value" id="minutes">18</span>
+            <span class="label">Minutos</span>
+          </div>
+          <div>
+            <span class="value" id="seconds">18</span>
+            <span class="label">Segundos</span>
+          </div>
+        </div>
+      </section>
+      <video autoplay muted loop>
+        <source src="./video/video02.mp4" type="video/mp4">
+      </video>
+    </div>
+    <section id="programacao">
+      <div class="programacao-container">
+        <h2>Programação</h2>
+        <div class="programacao-card-wrapper">
+          <div class="programacao-card">
+            <h3>WELCOME DRINKS</h3>
+            <img src="./imagens/ícones_site-01.png" alt="Imagem de jangada">
+            <p>quinta-feira, 09 de outubro de 2025</p>
+            <a class="botao-saiba-mais" onclick="abrirModalDica('modalWelcomeDrinks', event)">Saiba mais</a>
+          </div>
+          <div class="programacao-card">
+            <h3>DIA LIVRE</h3>
+            <img src="./imagens/Passeios.png" alt="Taças de champanhe">
+            <p>10 outubro - Dia livre aproveitem para curtir</p>
+            <a class="botao-saiba-mais" onclick="abrirModalDica('modalDiaLivre', event)">Saiba mais</a>
+          </div>
+          <div class="programacao-card">
+            <h3>CASAMENTO</h3>
+            <img src="./imagens/Alianças.png" alt="Aliança de casamento">
+            <p>sabado, 11 de outubro de 2025</p>
+            <a class="botao-saiba-mais" onclick="abrirModalDica('modalCasamento', event)">Saiba mais</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="directions">
+      <div class="directions-container">
+        <h2 class="directions-title">Como Chegar</h2>
+        <div class="directions-section">
+          <h3>Trancoso</h3>
+          <img src="./imagens/Igrejinha.png" alt="Igreja de Trancoso">
+          <p>
+            Trancoso é um distrito de Porto Seguro, no Litoral Sul da Bahia.
+            O charmoso vilarejo conquista seus visitantes com praias deslumbrantes e uma vida noturna
+            animada, cheia de opções de bares e restaurantes.
+
+            O famoso Quadrado é o coração de Trancoso. O grande gramado, rodeado por casinhas coloridas, tem
+            um clima único. Por lá, você pode aproveitar a tranquilidade, fazer uma boa caminhada e
+            descobrir restaurantes variados, bares e lojinhas. No final do Quadrado, fica a Igreja de São
+            João Batista – a famosa Igrejinha do Quadrado –, com uma vista incrível para o mar.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="directions-options">
+      <div class="directions-container">
+        <div class="directions-card-wrapper">
+          <div class="directions-card">
+            <h3>Pegar Táxi</h3>
+            <!-- <img src="./imagens/taxi.jpg" alt="Imagem de táxi"> -->
+            <p>Táxis disponíveis no Aeroporto de Porto Seguro para levar você diretamente ao destino.</p>
+            <a class="botao-saiba-mais" onclick="abrirModalDica('modalTaxi', event)">Saiba mais</a>
+          </div>
+          <div class="directions-card">
+            <h3>Reservar Transfer</h3>
+            <!-- <img src="./imagens/transfer.jpg" alt="Imagem de serviço de transfer"> -->
+            <p>Serviços de transfer confiáveis para uma viagem confortável e segura até Trancoso.</p>
+            <a class="botao-saiba-mais" onclick="abrirModalDica('modalTransfer', event)">Saiba mais</a>
+          </div>
+          <div class="directions-card">
+            <h3>Alugar Carro</h3>
+            <!-- <img src="./imagens/alugar-carro.jpg" alt="Imagem de aluguel de carro"> -->
+            <p>Opção ideal para explorar a região com flexibilidade e liberdade de horários.</p>
+            <a class="botao-saiba-mais" onclick="abrirModalDica('modalAlugarCarro', event)">Saiba mais</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="video-bg">
+      <video autoplay muted loop>
+        <source src="./video/TRANCOSO - O charme e a beleza da BAHIA (1).mp4" type="video/mp4">
+        Seu navegador não suporta o vídeo.
+      </video>
+    </div>
+    <section id="hospedagem">
+      <div class="hospedagem-container">
+        <h2>Hospedagem</h2>
+        <div class="hospedagem-wrapper">
+          <a href="https://www.hotelexemplo1.com" class="hospedagem-item">
+            <img src="./imagens/hotel1.jpg" alt="Imagem do Hotel 1">
+            <p>Milagres Hospedagens</p>
+          </a>
+          <a href="https://www.hotelexemplo2.com" class="hospedagem-item">
+            <img src="./imagens/hotel2.jpg" alt="Imagem do Hotel 2">
+            <p>Taboo Milagres</p>
+          </a>
+          <a href="https://www.hotelexemplo3.com" class="hospedagem-item">
+            <img src="./imagens/hotel3.jpg" alt="Imagem do Hotel 3">
+            <p>Quadrado Pousada</p>
+          </a>
+        </div>
+        <button class="mais-opcoes-btn" onclick="abrirModal()">Mais opções</button>
+      </div>
+      <div id="modalHospedagem" class="hospedagem-modal">
+        <div class="modal-content">
+          <span class="fechar" onclick="fecharModal()">&times;</span>
+          <h3>Mais opções de hospedagem</h3>
+          <ul class="hospedagem-lista">
+            <li><a href="https://www.hotelexemplo4.com">Morada de Charme</a></li>
+            <li><a href="https://www.hotelexemplo5.com">Pousada Haya</a></li>
+            <li><a href="https://www.hotelexemplo6.com">Oka Milagres Residence 06</a></li>
+            <li><a href="https://www.hotelexemplo7.com">Pousada do Sol</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="dicas">
+      <div class="dicas-container">
+        <h2>Dicas</h2>
+        <div class="dicas-wrapper">
+          <div class="dica-item" onclick="abrirModalDica('modalBeleza')">
+            <img src="./imagens/salão.png" alt="Salão de Beleza">
+            <button>Salões de Beleza</button>
+          </div>
+          <div class="dica-item" onclick="abrirModalDica('modalRestaurantes')">
+            <img src="./imagens/restaurante.png" alt="Restaurantes">
+            <button>Restaurantes</button>
+          </div>
+        </div>
+      </div>
+      <div id="modalBeleza" class="dica-modal">
+        <div class="modal-content">
+          <span class="fechar" onclick="fecharModalDica('modalBeleza')">&times;</span>
+          <h3>Salões de Beleza</h3>
+          <ul>
+            <li>Salão 1 - Rua X, nº Y</li>
+            <li>Salão 2 - Rua Z, nº W</li>
+            <li>Salão 3 - Rua ABC, nº DEF</li>
+          </ul>
+        </div>
+      </div>
+      <div id="modalRestaurantes" class="dica-modal">
+        <div class="modal-content">
+          <span class="fechar" onclick="fecharModalDica('modalRestaurantes')">&times;</span>
+          <h3>Restaurantes</h3>
+          <ul>
+            <li>Restaurante A - Especialidade X</li>
+            <li>Restaurante B - Especialidade Y</li>
+            <li>Restaurante C - Especialidade Z</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="rsvp">
+      <div class="rsvp-container">
+        <form class="rsvp-form" action="#" method="POST">
+          <h2>R.S.V.P</h2>
+          <label for="nome">Nome *</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+          <label for="telefone">Telefone com DDD</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX">
+          <label for="acompanhantes">Nome dos acompanhantes</label>
+          <input type="text" id="acompanhantes" name="acompanhantes" placeholder="Digite os nomes dos acompanhantes">
+          <label for="chegada">Data de chegada:</label>
+          <div class="date-fields">
+            <input type="number" id="dia" name="dia" placeholder="Dia" min="1" max="31">
+            <select id="mes" name="mes">
+              <option value="" disabled selected>Mês</option>
+              <option value="1">Janeiro</option>
+              <option value="2">Fevereiro</option>
+              <option value="3">Março</option>
+              <option value="4">Abril</option>
+              <option value="5">Maio</option>
+              <option value="6">Junho</option>
+              <option value="7">Julho</option>
+              <option value="8">Agosto</option>
+              <option value="9">Setembro</option>
+              <option value="10">Outubro</option>
+              <option value="11">Novembro</option>
+              <option value="12">Dezembro</option>
+            </select>
+            <input type="number" id="ano" name="ano" placeholder="Ano" min="2023" max="2030">
+          </div>
+          <label for="hotel">Hotel em que ficará hospedado:</label>
+          <input type="text" id="hotel" name="hotel" placeholder="Digite o nome do hotel">
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>© 2025 Isadora & Felipe</small>
+  </footer>
+
+  <div id="modalWelcomeDrinks" class="dica-modal">
+    <div class="modal-content">
+      <span class="fechar" onclick="fecharModalDica('modalWelcomeDrinks')">&times;</span>
+      <h3>Welcome Drinks</h3>
+      <p>Detalhes sobre o Welcome Drinks aqui...</p>
+    </div>
+  </div>
+
+  <div id="modalDiaLivre" class="dica-modal">
+    <div class="modal-content">
+      <span class="fechar" onclick="fecharModalDica('modalDiaLivre')">&times;</span>
+      <h3>Dia Livre</h3>
+      <p>Informações sobre o dia livre e sugestões de atividades...</p>
+    </div>
+  </div>
+
+  <div id="modalCasamento" class="dica-modal">
+    <div class="modal-content">
+      <span class="fechar" onclick="fecharModalDica('modalCasamento')">&times;</span>
+      <h3>Casamento</h3>
+      <p>Detalhes sobre a cerimônia de casamento e recepção...</p>
+    </div>
+  </div>
+
+  <div id="modalTaxi" class="dica-modal">
+    <div class="modal-content">
+      <span class="fechar" onclick="fecharModalDica('modalTaxi')">&times;</span>
+      <h3>Pegar Táxi</h3>
+      <p>Informações sobre serviços de táxi disponíveis...</p>
+    </div>
+  </div>
+
+  <div id="modalTransfer" class="dica-modal">
+    <div class="modal-content">
+      <span class="fechar" onclick="fecharModalDica('modalTransfer')">&times;</span>
+      <h3>Reservar Transfer</h3>
+      <p>Detalhes sobre serviços de transfer e como reservar...</p>
+    </div>
+  </div>
+
+  <div id="modalAlugarCarro" class="dica-modal">
+    <div class="modal-content">
+      <span class="fechar" onclick="fecharModalDica('modalAlugarCarro')">&times;</span>
+      <h3>Alugar Carro</h3>
+      <p>Informações sobre aluguel de carros e recomendações...</p>
+    </div>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
