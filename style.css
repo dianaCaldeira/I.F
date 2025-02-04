@@ -481,6 +481,33 @@ h3 {
     margin-bottom: 20px;
 }
 
+/* Estilo para imagens dentro dos modais */
+.modal-image {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+  }
+  
+  /* Ajuste do tamanho do conteúdo do modal */
+  .dica-modal .modal-content {
+    max-width: 600px;
+    width: 90%;
+    padding: 30px;
+  }
+  
+  /* Centralizar o conteúdo do modal */
+  .dica-modal .modal-content {
+    text-align: center;
+  }
+  
+  /* Ajuste do estilo do texto dentro do modal */
+  .dica-modal .modal-content p {
+    text-align: center;
+    margin-top: 20px;
+    line-height: 1.6;
+  }
+
 .hospedagem-lista {
     list-style-type: none;
     padding: 0;
