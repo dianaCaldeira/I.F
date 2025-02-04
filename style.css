@@ -425,6 +425,7 @@ footer {
 }
 
 .mais-opcoes-btn {
+    margin-top: 30px;
     background-color: transparent;
     border: 1px solid #005981;
     color: #005981;
@@ -530,7 +531,7 @@ footer {
 .dica-item img {
     width: 120px;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .dica-item button {
