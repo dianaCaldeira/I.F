@@ -112,7 +112,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .about-box p {
     font-size: 1rem;
-    line-height: 1;
+    line-height: 1.8;
     color: #808285;
 }
 
@@ -248,11 +248,11 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
 }
 
-.video-header {
+.video-header, .video-bg {
     height: 500px;
 }
 
-.video-countdown-bg, .video-bg {
+.video-countdown-bg {
     height: 300px;
 }
 
@@ -272,6 +272,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .video-header video {
     top: 63%;
+}
+
+.video-bg video {
+    opacity: 80%;
 }
 
 /* Estilo para a imagem da concha */
@@ -330,6 +334,7 @@ footer {
 }
 
 .directions-section p {
+    padding-top: 30px;
     font-size: 1rem;
     line-height: 1.8;
     color: #808285;
@@ -420,19 +425,21 @@ footer {
 }
 
 .mais-opcoes-btn {
-    margin-top: 30px;
-    padding: 10px 20px;
+    background-color: transparent;
+    border: 1px solid #005981;
+    color: #005981;
+    font-family: 'TextoFonte', Arial, sans-serif;
     font-size: 1rem;
-    color: #ffffff;
-    background-color: #005981;
-    border: none;
-    border-radius: 5px;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 15px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .mais-opcoes-btn:hover {
     background-color: #003f62;
+    color: #ffffff;
 }
 
 /* Modal hospedagem */
@@ -533,8 +540,8 @@ footer {
     font-family: 'TextoFonte', Arial, sans-serif;
     font-size: 1rem;
     font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 10px 30px;
+    border-radius: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
