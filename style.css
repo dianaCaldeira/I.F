@@ -404,11 +404,18 @@ footer {
     flex-wrap: wrap;
 }
 
+h3 {
+    font-size: 1.5rem;
+    color: #005981;
+    margin-bottom: 20px;
+}
+
 .hospedagem-item {
     text-align: center;
     text-decoration: none;
-    color: #005981;
-    font-size: 1rem;
+    color: #808285;
+    font-size: 1.0rem;
+    line-height: 1.5;
     transition: transform 0.3s ease;
 }
 
@@ -459,10 +466,13 @@ footer {
     background-color: #ffffff;
     margin: 10% auto;
     padding: 20px;
-    width: 50%;
+    width: 80%;
+    max-width: 800px;
     border-radius: 10px;
     text-align: center;
     position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .modal-content h3 {
@@ -474,21 +484,44 @@ footer {
 .hospedagem-lista {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .hospedagem-lista li {
+    width: 45%;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.hospedagem-lista img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
     margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .hospedagem-lista a {
+    display: block;
     text-decoration: none;
     color: #005981;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
     transition: color 0.3s ease;
 }
 
 .hospedagem-lista a:hover {
     color: #003f62;
+}
+
+.hospedagem-lista p {
+    font-size: 0.9rem;
+    color: #808285;
+    margin: 0;
 }
 
 /* Botão Fechar do modal */
@@ -857,6 +890,14 @@ footer {
 
     .label {
         font-size: 0.65rem;
+    }
+    .modal-content {
+        width: 90%;
+        margin: 5% auto;
+    }
+
+    .hospedagem-lista li {
+        width: 100%;
     }
 }
 
