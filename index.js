@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         menuIcon.classList.toggle('active');
         navLinks.classList.toggle('active');
     });
-    
+
     function abrirModal() {
         document.getElementById("modalHospedagem").style.display = "block";
     }
@@ -67,28 +67,61 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('.rsvp-form');
 
     form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
         const nome = document.getElementById('nome').value.trim();
         if (!nome) {
             alert('Por favor, preencha o campo Nome.');
-            event.preventDefault();
             return;
         }
 
         const telefone = document.getElementById('telefone').value.trim();
-        if (telefone && !/^$$\d{2}$$ \d{4,5}-\d{4}$/.test(telefone)) {
-            alert('Por favor, insira um telefone válido no formato (XX) XXXXX-XXXX.');
-            event.preventDefault();
+        const numeroLimpo = telefone.replace(/\D/g, '');
+        if (telefone && (numeroLimpo.length < 10 || numeroLimpo.length > 11)) {
+            alert('Por favor, insira um telefone válido com DDD (10 ou 11 dígitos).');
             return;
         }
 
         const dia = document.getElementById('dia').value.trim();
         const mes = document.getElementById('mes').value.trim();
-        if (dia && (!mes || isNaN(dia) || dia < 1 || dia > 31)) {
-            alert('Por favor, preencha corretamente o dia e o mês de chegada.');
-            event.preventDefault();
+        const ano = document.getElementById('ano').value.trim();
+        if (dia && mes && ano) {
+            if (isNaN(dia) || dia < 1 || dia > 31 || isNaN(ano) || ano < 2023 || ano > 2030) {
+                alert('Por favor, preencha corretamente a data de chegada.');
+                return;
+            }
+            const dataChegada = `${dia}/${mes}/${ano}`;
+            
+            // Adicionar a data de chegada ao formulário
+            let dataChegadaInput = document.getElementById('dataChegadaHidden');
+            if (!dataChegadaInput) {
+                dataChegadaInput = document.createElement('input');
+                dataChegadaInput.type = 'hidden';
+                dataChegadaInput.id = 'dataChegadaHidden';
+                dataChegadaInput.name = 'chegada';
+                form.appendChild(dataChegadaInput);
+            }
+            dataChegadaInput.value = dataChegada;
+        } else if (dia || mes || ano) {
+            alert('Por favor, preencha a data de chegada completa.');
             return;
         }
 
-        alert('Formulário enviado com sucesso! Obrigado pelo R.S.V.P.');
+        // Se a validação passar, envie o formulário
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors'
+        })
+        .then(response => {
+            alert('Formulário enviado com sucesso! Obrigado pelo R.S.V.P.');
+            form.reset();
+        })
+        .catch(error => {
+            console.error('Erro ao enviar o formulário:', error);
+            alert('Ocorreu um erro ao enviar o formulário. Por favor, tente novamente.');
+        });
     });
 });
