@@ -4,7 +4,7 @@
 @font-face {
     font-family: 'TituloFonte';
     src: url('./Fontes/Tamil\ Sangam\ MN.ttc') format('ttc'),
-         url('./Fontes/MinionVariableConcept-Roman.otf') format('otf');
+        url('./Fontes/MinionVariableConcept-Roman.otf') format('otf');
     font-weight: normal;
     font-style: normal;
 }
@@ -12,7 +12,7 @@
 @font-face {
     font-family: 'TextoFonte';
     src: url('./Fontes/Tamil\ Sangam\ MN.ttc') format('ttc'),
-         url('./Fontes/MinionVariableConcept-Roman.otf') format('otf');
+        url('./Fontes/MinionVariableConcept-Roman.otf') format('otf');
     font-weight: normal;
     font-style: normal;
 }
@@ -29,7 +29,12 @@ body {
 
 /* Estilo para o menu de navegação e títulos */
 .navbar,
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'TituloFonte', 'Georgia', serif;
     position: relative;
 }
@@ -243,39 +248,68 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Estilos para cabeçalhos com vídeo */
-.video-header, .video-countdown-bg, .video-bg {
+/* Estilos comuns para os containers de vídeo */
+.video-header,
+.video-countdown-bg,
+.video-bg {
     position: relative;
+    /* Permite posicionamento absoluto dos elementos filhos */
     overflow: hidden;
+    /* Esconde qualquer conteúdo que ultrapasse as dimensões do container */
 }
 
-.video-header, .video-bg {
+/* Define a altura para os containers de vídeo principal e de fundo */
+.video-header,
+.video-bg {
     height: 500px;
+    /* Altura fixa de 500 pixels */
 }
 
+/* Define a altura para o container de vídeo da contagem regressiva */
 .video-countdown-bg {
     height: 300px;
+    /* Altura fixa de 300 pixels */
 }
 
-.video-header video, .video-countdown-bg video, .video-bg video {
+/* Estilos comuns para todos os elementos de vídeo */
+.video-header video,
+.video-countdown-bg video {
     position: absolute;
+    /* Posicionamento absoluto em relação ao container pai */
     top: 50%;
+    /* Posiciona o topo do vídeo no centro vertical do container */
     left: 50%;
+    /* Posiciona a esquerda do vídeo no centro horizontal do container */
     min-width: 100%;
+    /* Garante que o vídeo cubra toda a largura do container */
     min-height: 100%;
+    /* Garante que o vídeo cubra toda a altura do container */
     width: auto;
+    /* Permite que a largura se ajuste automaticamente */
     height: auto;
+    /* Permite que a altura se ajuste automaticamente */
     transform: translate(-50%, -50%);
+    /* Centraliza o vídeo perfeitamente */
     object-fit: cover;
+    /* Redimensiona o vídeo para cobrir todo o container, mantendo a proporção */
     z-index: -1;
+    /* Coloca o vídeo atrás de outros elementos */
     opacity: 40%;
+    /* Define a opacidade do vídeo para 40% */
 }
 
+/* Ajuste específico para o vídeo do cabeçalho */
 .video-header video {
     top: 63%;
+    /* Move o vídeo um pouco mais para baixo no container */
 }
 
+/* Ajuste específico para o vídeo de fundo */
 .video-bg video {
+    width: 60%;
     opacity: 80%;
+    min-height: 80%;
+    /* Aumenta a opacidade para 80% */
 }
 
 /* Estilo para a imagem da concha */
@@ -487,26 +521,26 @@ h3 {
     height: auto;
     display: block;
     margin: 0 auto 20px;
-  }
-  
-  /* Ajuste do tamanho do conteúdo do modal */
-  .dica-modal .modal-content {
+}
+
+/* Ajuste do tamanho do conteúdo do modal */
+.dica-modal .modal-content {
     max-width: 600px;
     width: 90%;
     padding: 30px;
-  }
-  
-  /* Centralizar o conteúdo do modal */
-  .dica-modal .modal-content {
+}
+
+/* Centralizar o conteúdo do modal */
+.dica-modal .modal-content {
     text-align: center;
-  }
-  
-  /* Ajuste do estilo do texto dentro do modal */
-  .dica-modal .modal-content p {
+}
+
+/* Ajuste do estilo do texto dentro do modal */
+.dica-modal .modal-content p {
     text-align: center;
     margin-top: 20px;
     line-height: 1.6;
-  }
+}
 
 .hospedagem-lista {
     list-style-type: none;
@@ -919,6 +953,7 @@ h3 {
     .label {
         font-size: 0.65rem;
     }
+
     .modal-content {
         width: 90%;
         margin: 5% auto;
