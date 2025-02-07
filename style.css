@@ -91,9 +91,9 @@ h6 {
 
 /* Estilo da caixa "Sobre" */
 .about-box {
-    margin: 50px auto;
+    margin: 10px auto;
     padding: 20px 40px;
-    max-width: 500px;
+    max-width: 90%;
     position: relative;
 }
 
@@ -167,6 +167,7 @@ h6 {
     background-color: #fefaef;
     padding: 50px 0;
     text-align: center;
+    max-width: 80%;
 }
 
 #programacao h2 {
@@ -320,7 +321,7 @@ h6 {
 /* Estilo para a imagem sobreposta */
 .overlay-image {
     position: absolute;
-    top: 45%;
+    top: 53%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
@@ -373,8 +374,8 @@ footer {
     line-height: 1.8;
     color: #808285;
     text-align: center;
-    margin: 0 auto 40px;
-    max-width: 650px;
+    margin: 0 auto;
+    max-width: 80%;
 }
 
 .directions-section img {
