@@ -17,19 +17,22 @@
           <img src="./imagens/monograma.png" alt="Monograma Isadora e Felipe" loading="eager">
         </a>
       </div>
-      <button class="menu-icon" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-menu">
+      <button class="menu-icon" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-menu" onclick="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <ul class="nav-links" id="nav-menu" role="menu">
-        <li role="none"><a href="#about" role="menuitem">BOAS-VINDAS</a></li>
-        <li role="none"><a href="#programacao" role="menuitem">PROGRAMAÇÃO</a></li>
-        <li role="none"><a href="#directions" role="menuitem">COMO CHEGAR</a></li>
-        <li role="none"><a href="#hospedagem" role="menuitem">HOSPEDAGEM</a></li>
-        <li role="none"><a href="#dicas" role="menuitem">DICAS</a></li>
-        <li role="none"><a href="#rsvp" role="menuitem">R.S.V.P</a></li>
-      </ul>
+      <div class="nav-links-wrapper">
+        <ul class="nav-links" id="nav-menu" role="menu">
+          <li role="none"><a href="#about" role="menuitem">BOAS-VINDAS</a></li>
+          <li role="none"><a href="#programacao" role="menuitem">PROGRAMAÇÃO</a></li>
+          <li role="none"><a href="#directions" role="menuitem">COMO CHEGAR</a></li>
+          <li role="none"><a href="#hospedagem" role="menuitem">HOSPEDAGEM</a></li>
+          <li role="none"><a href="#dicas" role="menuitem">PRESENTES</a></li>
+          <li role="none"><a href="#dicas" role="menuitem">DICAS</a></li>
+          <li role="none"><a href="#rsvp" role="menuitem">R.S.V.P</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
@@ -283,6 +286,10 @@
             <img src="./imagens/restaurantes-01.png" alt="Restaurantes">
             <button>Restaurantes</button>
           </div>
+          <div class="dica-item" onclick="abrirModalDica('modalLojas')">
+            <img src="./imagens/icones_presentes.png" alt="Lojas">
+            <button>Presentes</button>
+          </div>
         </div>
       </div>
       <div id="modalBeleza" class="dica-modal">
@@ -334,6 +341,24 @@
             <p>Saindo do Quadrado, vocês poderão encontrar restaurantes com preços mais acessíveis e também explorar
               Beach Clubs com cardápios maravilhosos, pé na areia.</p>
           </ul>
+        </div>
+      </div>
+      <div id="modalLojas" class="dica-modal">
+        <div class="modal-content">
+          <span class="fechar" onclick="fecharModalDica('modalLojas')">&times;</span>
+          <h3>As três lojas de presentes são:</h3>
+          <ul>
+            <li>
+              <a href="https://www.isadoraefelipe.com.br/#/presentes" target="_blank">Casar.com</a>
+            </li>
+            <li>
+              <a href="https://www.taniabulhoeslista.com.br/lista/5158" target="_blank">Tania Bulhões</a>
+            </li>
+            <li>
+              <a href="https://www.mickey.com.br/wl-gift-list?list=10755" target="_blank">Mickey</a>
+            </li><br>
+            <p>Essas são as duas lojas de presentes onde vocês podem encontrar itens maravilhosos para nos presentear.</p>
+            </ul>
         </div>
       </div>
     </section>
@@ -404,7 +429,7 @@
       <h3>Casamento</h3>
       <img src="./imagens/Alianças.png" alt="Casamento" class="modal-image">
       <p>Teatro Loccitane<br>15h30<br><br></p>
-      <img src="./imagens/" alt="Trajes para casamento" class="modal-image">
+      <img src="./imagens/dress_code.png" alt="Trajes para casamento" class="modal-image">
       <h2>Traje</h2>
         <p>Mulheres: Sugerimos vestidos leves e fluídos. A cerimônia será na grama, para seu conforto recomendamos salto bloco ou
         sandálias baixas.
