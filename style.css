@@ -46,7 +46,7 @@ h6 {
     align-items: center;
     background-color: #fefaef;
     border-bottom: 2px solid #eee;
-    padding: 10px 20px;
+    padding: 10px 0px;
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -58,16 +58,22 @@ h6 {
     margin-left: 30px;
 }
 
-.nav-links {
+.nav-links-wrapper{
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.nav-links {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
 .nav-links li {
-    margin: 0 70px;
+    margin: 0 20px;
 }
 
 .nav-links a {
