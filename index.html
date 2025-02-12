@@ -17,7 +17,8 @@
           <img src="./imagens/monograma.png" alt="Monograma Isadora e Felipe" loading="eager">
         </a>
       </div>
-      <button class="menu-icon" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-menu" onclick="toggleMenu()">
+      <button class="menu-icon" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-menu"
+        onclick="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
@@ -53,7 +54,8 @@
           esperamos contar com a presença de todos no nosso grande dia!<br>
           Não se esqueçam de confirmar sua presença!<br>
           Se desejarem nos presentear, fiquem à vontade para escolher qualquer item da nossa Lista de Casamento em
-          sites, lojas físicas ou através da opção de cotas.Estamos ansiosos e animados!<br><br>
+          sites, lojas físicas ou através da opção de cotas.<br>
+          Estamos ansiosos e animados!<br><br>
           Nos vemos na Bahia!
         </p>
       </div>
@@ -123,7 +125,9 @@
             O famoso Quadrado é o coração de Trancoso. O grande gramado, rodeado por casinhas coloridas, tem
             um clima único. Por lá, você pode aproveitar a tranquilidade, fazer uma boa caminhada e
             descobrir restaurantes variados, bares e lojinhas.<br> No final do Quadrado, fica a Igreja de São
-            João Batista – a famosa Igrejinha do Quadrado –, com uma vista incrível para o mar.
+            João Batista – a famosa Igrejinha do Quadrado –, com uma vista incrível para o mar.<br><br>
+            O aeroporto comercial mais próximo é o de Porto Seguro (BPS).
+            Para quem chegar por ali, as opções mais fáceis até Trancoso são:
           </p>
         </div>
       </div>
@@ -133,16 +137,18 @@
         <div class="directions-card-wrapper">
           <div class="directions-card">
             <h3>Táxi</h3>
-            <p>Táxis disponíveis no Aeroporto de Porto Seguro para levar você diretamente ao destino.</p>
+            <img src="./imagens/taxi.png" alt="Táxi">
+            <a class="botao-saiba-mais" onclick="abrirModalDica('modalTaxi', event)">Saiba mais</a>
           </div>
           <div class="directions-card">
             <h3>Reservar Transfer</h3>
-            <p>Serviços de transfer confiáveis para uma viagem confortável e segura até Trancoso.</p>
+            <img src="./imagens/transfer.png" alt="Transfer">
             <a class="botao-saiba-mais" onclick="abrirModalDica('modalTransfer', event)">Saiba mais</a>
           </div>
           <div class="directions-card">
             <h3>Alugar Carro</h3>
-            <p>Opção ideal para explorar a região com flexibilidade e liberdade de horários.</p>
+            <img src="./imagens/carro.png" alt="Carro">
+            <a class="botao-saiba-mais" onclick="abrirModalDica('modalAlugarCarro', event)">Saiba mais</a>
           </div>
         </div>
       </div>
@@ -277,19 +283,20 @@
     <section id="presentes">
       <div class="presentes-container">
         <h2>Presentes</h2>
-        <p>Se desejarem nos presentear, fiquem à vontade para escolher qualquer item da nossa Lista de Casamento em sites, lojas físicas ou através da opção de cotas.</p>
+        <p>Se desejarem nos presentear, fiquem à vontade para escolher qualquer item da nossa Lista de Casamento em
+          sites, lojas físicas ou através da opção de cotas.</p>
         <div class="presentes-wrapper">
           <div class="presente-item">
             <img src="./imagens/casar.png" alt="Casar.com">
-            <a href="https://www.isadoraefelipe.com.br/#/presentes"  class="botao-presente">Casar.com</a>
+            <a href="https://www.isadoraefelipe.com.br/#/presentes" class="botao-presente">Casar.com</a>
           </div>
           <div class="presente-item">
             <img src="./imagens/tania.jpg" alt="Tania Bulhões">
-            <a href="https://www.taniabulhoeslista.com.br/lista/5158"  class="botao-presente">Tania Bulhões</a>
+            <a href="https://www.taniabulhoeslista.com.br/lista/5158" class="botao-presente">Tania Bulhões</a>
           </div>
           <div class="presente-item">
             <img src="./imagens/Mickey.png" alt="Mickey">
-            <a href="https://www.mickey.com.br/wl-gift-list?list=10755"  class="botao-presente">Presentes Mickey</a>
+            <a href="https://www.mickey.com.br/wl-gift-list?list=10755" class="botao-presente">Presentes Mickey</a>
           </div>
         </div>
       </div>
@@ -429,10 +436,20 @@
       <p>Teatro Loccitane<br>15h30<br><br></p>
       <img src="./imagens/dress_code.png" alt="Trajes para casamento" class="modal-image">
       <h2>Traje</h2>
-        <p>Mulheres: Sugerimos vestidos leves e fluídos. A cerimônia será na grama, para seu conforto recomendamos salto bloco ou
+      <p>Mulheres: Sugerimos vestidos leves e fluídos. A cerimônia será na grama, para seu conforto recomendamos salto
+        bloco ou
         sandálias baixas.
         Vale lembrar que cores como branco, off-white ou tons muito claros, não devem ser usados no casamento.<br>
         Homens: Social. Recomendamos tecidos leves, dispensa-se o uso de gravata.</p><br><br>
+    </div>
+  </div>
+
+  <div id="modalTaxi" class="dica-modal">
+    <div class="modal-content">
+      <span class="fechar" onclick="fecharModalDica('modalTaxi')">&times;</span>
+      <h3>Táxi</h3>
+      <img src="./imagens/taxi.png" alt="Táxi" class="modal-image">
+      <p>Táxis disponíveis no Aeroporto de Porto Seguro para levar você diretamente ao destino.</p>
     </div>
   </div>
 
@@ -440,15 +457,38 @@
     <div class="modal-content">
       <span class="fechar" onclick="fecharModalDica('modalTransfer')">&times;</span>
       <h3>Reservar Transfer</h3>
+      <img src="./imagens/transfer.png" alt="Transfer" class="modal-image">
       <p>Morena Turismo: <br>(73)98816-7782</p>
       <p>Carlos Tour: <br> (73) 3668.1326 | (73) 9991.3607<br>
         (73) 9967.9554 | (73) 9961.3703</p>
       <p>Tribal Turismo: <br>(73) 9839.9598</p>
     </div>
   </div>
-</div>
 
-<script src="./index.js"></script>
+  <div id="modalAlugarCarro" class="dica-modal">
+    <div class="modal-content">
+      <span class="fechar" onclick="fecharModalDica('modalAlugarCarro')">&times;</span>
+      <h3>Alugar Carro</h3>
+      <img src="./imagens/carro.png" alt="Carro" class="modal-image">
+      <p>Saindo do aeroporto, o trajeto através da travessia da balsa é a opção mais rápida. A travessia dura em trono de 10 minutos entre Porto Seguro e Arraial D'Ajuda. Chegando em Arrial, você pode optar pela estrada de terra (20km até o ClubMed e 25km até Trancoso) ou dar uma pequena volta e seguir pelo asfalto (47km).<br>
+        O trecho que evita a balsa tem quase 80km entre Porto Seguro e Trancoso e é todo de asfalto.<br>
+        Empresas para aluguel de carro:</p>
+      <ul>
+        <li>
+          <a href="https://www.unidas.com.br/" rel="" target="_blank">Unidas</a>
+        </li>
+        <li>
+          <a href="https://www.movida.com.br/" rel="" target="_blank">Movida</a>
+        </li>
+        <li>
+          <a href="https://www.localiza.com/" rel="" target="_blank">Localiza</a>
+        </li>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <script src="./index.js"></script>
 </body>
 
 </html>

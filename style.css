@@ -904,7 +904,7 @@ h3 {
         max-width: 100%; /* Remove o limite de largura para o main apenas no responsivo */
         padding: 0; /* Ajuste opcional para remover qualquer padding extra */
     }
-    
+
     .menu-icon {
         display: flex;
         flex-direction: column;
@@ -1004,8 +1004,12 @@ h3 {
         height: 200px;
     }
 
+    .video-bg video {
+        padding: 30px;
+    }
+
     .overlay-image {
-        top: 54%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 80%;
