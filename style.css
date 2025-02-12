@@ -900,6 +900,11 @@ h3 {
 }
 
 @media screen and (max-width: 768px) {
+    main section {
+        max-width: 100%; /* Remove o limite de largura para o main apenas no responsivo */
+        padding: 0; /* Ajuste opcional para remover qualquer padding extra */
+    }
+    
     .menu-icon {
         display: flex;
         flex-direction: column;
