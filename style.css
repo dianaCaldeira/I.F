@@ -602,6 +602,73 @@ h3 {
     color: #005981;
 }
 
+#presentes {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fefaef;
+}
+
+.presentes-container h2 {
+    font-size: 2.5rem;
+    color: #005981;
+    margin-bottom: 70px;
+    font-weight: bold;
+}
+
+.presentes-container p {
+    font-size: 1.1rem;
+    color: #808285;
+    margin-bottom: 70px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.presentes-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.presente-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.presente-item img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+.botao-presente {
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid #005981;
+    color: #005981;
+    font-family: 'TextoFonte', Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.botao-presente:hover {
+    background-color: #005981;
+    color: #ffffff;
+}
+
 /* Seção Dicas */
 #dicas {
     padding: 50px 20px;
@@ -968,6 +1035,11 @@ h3 {
     .hospedagem-lista li {
         width: 100%;
     }
+
+    .presente-item {
+        flex-basis: 100%;
+      }
+    
 }
 
 @media screen and (min-width: 769px) {
