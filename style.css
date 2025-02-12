@@ -986,7 +986,7 @@ h3 {
     }
 
     .programacao-card {
-        width: 50%;
+        width: 60%;
         max-width: none;
     }
 
@@ -1048,6 +1048,15 @@ h3 {
     .presente-item {
         flex-basis: 100%;
       }
+
+      .dicas-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dica-item {
+        margin-bottom: 20px;
+    }
     
 }
 
