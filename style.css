@@ -5,7 +5,7 @@
     font-family: 'TituloFonte';
     src: url('./Fontes/Tamil\ Sangam\ MN.ttc') format('ttc'),
         url('./Fontes/MinionVariableConcept-Roman.otf') format('otf');
-    font-weight: normal;
+    font-weight: 300; /* Ajuste para um valor mais baixo */
     font-style: normal;
 }
 
@@ -13,13 +13,14 @@
     font-family: 'TextoFonte';
     src: url('./Fontes/Tamil\ Sangam\ MN.ttc') format('ttc'),
         url('./Fontes/MinionVariableConcept-Roman.otf') format('otf');
-    font-weight: normal;
+    font-weight: 300; /* Ajuste para um valor mais baixo */
     font-style: normal;
 }
 
 /* Estilo geral do corpo da página */
 body {
     font-family: 'TextoFonte', Arial, sans-serif;
+    font-weight: 300;
     margin: 0;
     padding: 0;
     background-color: #fefaef;
@@ -36,6 +37,7 @@ h4,
 h5,
 h6 {
     font-family: 'TituloFonte', 'Georgia', serif;
+    font-weight: 300;
     position: relative;
 }
 
@@ -80,9 +82,10 @@ h6 {
     text-decoration: none;
     color: #005981;
     font-family: 'TituloFonte', 'Georgia', serif;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-size: 1rem;
     letter-spacing: 0.1rem;
+    font-weight: 400;
     transition: color 0.3s ease-in-out;
 }
 
@@ -115,10 +118,11 @@ h6 {
 
 .about-box h2 {
     font-size: 1.8rem;
-    font-weight: bold;
+    /* font-weight: bold; */
     color: #005981;
     margin-bottom: 35px;
     margin-top: -10px;
+    font-weight: 400;
 }
 
 .about-box p {
@@ -180,7 +184,7 @@ h6 {
     font-size: 2rem;
     color: #005981;
     margin-bottom: 40px;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .programacao-container {
@@ -208,7 +212,7 @@ h6 {
 }
 
 .programacao-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     color: #005981;
     margin-bottom: 10px;
 }
@@ -235,7 +239,7 @@ h6 {
     text-decoration: none;
     color: #005981;
     font-size: 1rem;
-    font-weight: bold;
+    /* font-weight: bold; */
     padding: 10px 30px;
     border: 1px solid #808285;
     border-radius: 15px;
@@ -363,14 +367,14 @@ footer {
     font-size: 2rem;
     color: #005981;
     margin-bottom: 40px;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .directions-section h3 {
     font-size: 1.5rem;
     color: #005981;
     margin-bottom: 20px;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .directions-section p {
@@ -478,7 +482,7 @@ h3 {
     color: #005981;
     font-family: 'TextoFonte', Arial, sans-serif;
     font-size: 1rem;
-    font-weight: bold;
+    /* font-weight: bold; */
     padding: 10px 30px;
     border-radius: 15px;
     cursor: pointer;
@@ -576,7 +580,7 @@ h3 {
     text-decoration: none;
     color: #005981;
     font-size: 1.1rem;
-    font-weight: bold;
+    /* font-weight: bold; */
     margin-bottom: 5px;
     transition: color 0.3s ease;
 }
@@ -651,7 +655,7 @@ h3 {
     text-decoration: none;
     color: #005981;
     font-size: 1rem;
-    font-weight: bold;
+    /* font-weight: bold; */
     margin-top: 5px;
     transition: color 0.3s ease;
 }
@@ -670,7 +674,7 @@ h3 {
     font-size: 2.5rem;
     color: #005981;
     margin-bottom: 70px;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .presentes-container p {
@@ -714,7 +718,7 @@ h3 {
     color: #005981;
     font-family: 'TextoFonte', Arial, sans-serif;
     font-size: 1rem;
-    font-weight: bold;
+    /* font-weight: bold; */
     padding: 10px 30px;
     border-radius: 15px;
     text-decoration: none;
@@ -737,7 +741,7 @@ h3 {
     font-size: 2.5rem;
     color: #005981;
     margin-bottom: 40px;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .dicas-wrapper {
@@ -766,7 +770,7 @@ h3 {
     color: #005981;
     font-family: 'TextoFonte', Arial, sans-serif;
     font-size: 1rem;
-    font-weight: bold;
+    /* font-weight: bold; */
     padding: 10px 30px;
     border-radius: 15px;
     cursor: pointer;
@@ -890,7 +894,7 @@ h3 {
     width: 100%;
     padding: 12px;
     font-size: 1rem;
-    font-weight: bold;
+    /* font-weight: bold; */
     color: #ffffff;
     background-color: #005981;
     border: none;
