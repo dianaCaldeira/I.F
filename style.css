@@ -602,6 +602,64 @@ h3 {
     color: #005981;
 }
 
+/* Estilo para o modal de Alugar Carro */
+#modalAlugarCarro .modal-content {
+    max-width: 600px;
+    width: 90%;
+    padding: 30px;
+    text-align: center;
+}
+
+#modalAlugarCarro h3 {
+    font-size: 1.8rem;
+    color: #005981;
+    margin-bottom: 20px;
+}
+
+#modalAlugarCarro p {
+    font-size: 1rem;
+    color: #808285;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#modalAlugarCarro ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#modalAlugarCarro li {
+    width: 30%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#modalAlugarCarro img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#modalAlugarCarro a {
+    display: block;
+    text-decoration: none;
+    color: #005981;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 5px;
+    transition: color 0.3s ease;
+}
+
+#modalAlugarCarro a:hover {
+    color: #003f62;
+}
+
 #presentes {
     padding: 50px 20px;
     text-align: center;
@@ -1043,6 +1101,10 @@ h3 {
 
     .hospedagem-lista li {
         width: 100%;
+    }
+
+    #modalAlugarCarro li {
+        width: 45%;
     }
 
     .presente-item {
