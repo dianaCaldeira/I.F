@@ -124,4 +124,18 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Ocorreu um erro ao enviar o formulário. Por favor, tente novamente.');
         });
     });
+
+    function tornarFechamentoClicavel() {
+        var botoesFecha = document.querySelectorAll('.fechar');
+        botoesFecha.forEach(function(botao) {
+            botao.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                var modalId = this.closest('.dica-modal').id;
+                fecharModalDica(modalId);
+            });
+        });
+    }
+
+    // Chamada da nova função
+    tornarFechamentoClicavel();
 });

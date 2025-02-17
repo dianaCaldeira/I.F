@@ -609,7 +609,7 @@ h3 {
 /* Estilo para o modal de Alugar Carro */
 #modalAlugarCarro .modal-content {
     max-width: 600px;
-    width: 90%;
+    width: 75%;
     padding: 50px;
     text-align: center;
 }
