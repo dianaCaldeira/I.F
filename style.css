@@ -907,6 +907,24 @@ h3 {
     background-color: #005981;
 }
 
+.opcoes-comparecimento {
+    display: inline-flex;
+    justify-content: space-around; /* Ajusta o layout para alinhamento uniforme */
+    margin-bottom: 15px; /* Espaço inferior para separação dos elementos subsequentes */
+}
+
+.opcoes-comparecimento label {
+    font-size: 1rem;
+    color: #005981;
+    margin-left: 5px;
+    margin-right: 20px;
+}
+
+.opcoes-comparecimento input[type="radio"] {
+    transform: scale(0.5);
+    margin-right: 5px; /* Espaço entre o botão de rádio e o texto do rótulo */
+}
+
 /* Estilos específicos para os novos modais de Programação e Como Chegar */
 #modalWelcomeDrinks .modal-content,
 #modalDiaLivre .modal-content,
