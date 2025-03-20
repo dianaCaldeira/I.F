@@ -2,15 +2,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const menuIcon = document.querySelector('.menu-icon');
     const navLinks = document.querySelector('.nav-links');
 
+    // Alternar menu de navegação
     menuIcon.addEventListener('click', function () {
         menuIcon.classList.toggle('active');
         navLinks.classList.toggle('active');
     });
 
+    // Mostrar modal
     function abrirModal() {
         document.getElementById("modalHospedagem").style.display = "block";
     }
 
+    // Fechar modal
     function fecharModal() {
         document.getElementById("modalHospedagem").style.display = "none";
     }
@@ -18,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.abrirModal = abrirModal;
     window.fecharModal = fecharModal;
 
+    // Abrir modal com base no ID
     function abrirModalDica(modalId, event) {
         if (event) {
             event.preventDefault();
@@ -28,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // Fechar modal com base no ID
     function fecharModalDica(modalId) {
         const modal = document.getElementById(modalId);
         if (modal) {
@@ -38,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.abrirModalDica = abrirModalDica;
     window.fecharModalDica = fecharModalDica;
 
+    // Início da contagem regressiva
     function startCountdown() {
         const eventDate = new Date('2025-10-11T15:30:00-03:00').getTime();
 
@@ -66,22 +72,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const form = document.querySelector('.rsvp-form');
 
+    // Submissão do formulário
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 
+        // Capturar o nome
         const nome = document.getElementById('nome').value.trim();
         if (!nome) {
             alert('Por favor, preencha o campo Nome.');
             return;
         }
 
+        // Capturar o telefone e validar
         const telefone = document.getElementById('telefone').value.trim();
         const numeroLimpo = telefone.replace(/\D/g, '');
         if (telefone && (numeroLimpo.length < 10 || numeroLimpo.length > 11)) {
-            alert('Por favor, insira um telefone válido com DDD (10 ou 11 dígitos).');
+            alert('Por favor, insira um telefone válido com DDD (10 ou 11 dígitos)');
             return;
         }
 
+        // Capturar a confirmação de presença
+        const comparecimento = document.querySelector('input[name="confirmacao"]:checked');
+        if (!comparecimento) {
+            alert('Por favor, indique se irá comparecer.');
+            return;
+        }
+
+        // Capturar e validar a data de chegada
         const dia = document.getElementById('dia').value.trim();
         const mes = document.getElementById('mes').value.trim();
         const ano = document.getElementById('ano').value.trim();
@@ -90,9 +107,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('Por favor, preencha corretamente a data de chegada.');
                 return;
             }
+
+            // Formatar a data de chegada 
             const dataChegada = `${dia}/${mes}/${ano}`;
-            
-            // Adicionar a data de chegada ao formulário
             let dataChegadaInput = document.getElementById('dataChegadaHidden');
             if (!dataChegadaInput) {
                 dataChegadaInput = document.createElement('input');
@@ -107,13 +124,15 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Se a validação passar, envie o formulário
+        // Criar o objeto FormData para envio
         const formData = new FormData(form);
+        formData.append('confirmacao', comparecimento.value); // Adicionar confirmação de presença
 
+        // Enviar formulário para o Google Sheets
         fetch(form.action, {
             method: 'POST',
             body: formData,
-            mode: 'no-cors'
+            mode: 'no-cors' // Sem CORS devido ao comportamento do Google Apps Script
         })
         .then(response => {
             alert('Formulário enviado com sucesso! Obrigado pelo R.S.V.P.');
@@ -126,16 +145,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function tornarFechamentoClicavel() {
-        var botoesFecha = document.querySelectorAll('.fechar');
-        botoesFecha.forEach(function(botao) {
-            botao.addEventListener('touchstart', function(e) {
+        const botoesFecha = document.querySelectorAll('.fechar');
+        botoesFecha.forEach(function (botao) {
+            botao.addEventListener('touchstart', function (e) {
                 e.preventDefault();
-                var modalId = this.closest('.dica-modal').id;
+                const modalId = this.closest('.dica-modal').id;
                 fecharModalDica(modalId);
             });
         });
     }
 
-    // Chamada da nova função
     tornarFechamentoClicavel();
 });
