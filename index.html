@@ -91,13 +91,13 @@
         <h2>Programação</h2>
         <div class="programacao-card-wrapper">
           <div class="programacao-card">
-            <h3>WELCOME DRINKS</h3>
+            <h3>BOAS-VINDAS</h3>
             <img src="./imagens/drink.png" alt="Drink">
             <p>Quinta-feira <br>09 de outubro</p>
             <a class="botao-saiba-mais" onclick="abrirModalDica('modalWelcomeDrinks', event)">Saiba mais</a>
           </div>
           <div class="programacao-card">
-            <h3>DIA LIVRE</h3>
+            <h3>BEACH DAY</h3>
             <img src="./imagens/cadeira-04.png" alt="Taças de champanhe">
             <p>Sexta-feira <br>10 de outubro</p>
             <a class="botao-saiba-mais" onclick="abrirModalDica('modalDiaLivre', event)">Saiba mais</a>
@@ -411,7 +411,7 @@
           <div class="opcoes-comparecimento">
             <input type="radio" id="ira_comparecer" name="confirmacao" value="Irá comparecer" required>
             <label for="ira_comparecer">Irá comparecer</label>
-        
+
             <input type="radio" id="nao_ira_comparecer" name="confirmacao" value="Não irá comparecer">
             <label for="nao_ira_comparecer">Não irá comparecer</label>
           </div>
@@ -429,17 +429,19 @@
   <div id="modalWelcomeDrinks" class="dica-modal">
     <div class="modal-content">
       <span class="fechar" onclick="fecharModalDica('modalWelcomeDrinks')">&times;</span>
-      <h3>Welcome Drinks</h3>
-      <p>Mais informações em breve...</p>
+      <h3>Boas Vindas</h3>
+      <p>Aproveitem para conhecer o Quadrado!<br>
+        Estaremos no restaurante Silvana e Cia a partir das 18h! <br>
+        Todos convidados para curtir e tomar uma cerveja com a gente!</p>
     </div>
   </div>
 
   <div id="modalDiaLivre" class="dica-modal">
     <div class="modal-content">
       <span class="fechar" onclick="fecharModalDica('modalDiaLivre')">&times;</span>
-      <h3>Dia Livre</h3>
+      <h3>Beach Day</h3>
       <img src="./imagens/cadeira-04.png" alt="Cadeiras de praia" class="modal-image">
-      <p>Aproveitem para curtir passeios e praia.</p>
+      <p>12h Awê Trancoso Praia<br>Valor do day use: R$ 200,00 por pessoa.<br>(100% convertido em consumo no local)</p>
     </div>
   </div>
 
