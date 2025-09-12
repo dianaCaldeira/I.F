@@ -306,6 +306,73 @@
             <a href="https://site.lejour.com.br/lista-de-presentes/isadora-e-felipe" class="botao-presente" target="_blank">FastShop</a>
           </div>
         </div>
+        
+        <!-- Seção de Conta Empresarial -->
+        <div class="conta-empresarial">
+          <h3>Contribuição PIX</h3>
+          <p>Também aceitamos contribuições via PIX para ajudar a realizar nosso sonho!</p>
+          <div class="pix-options">
+            <div class="pix-item">
+              <img src="./imagens/pix-icon.png" alt="PIX" onerror="this.style.display='none'">
+              <div class="pix-info">
+                <p><strong>Chave PIX:</strong></p>
+                <div class="pix-key" id="pixKey">isadora.felipe.casamento@gmail.com</div>
+                <button onclick="copiarPix()" class="botao-copiar">Copiar Chave PIX</button>
+              </div>
+            </div>
+            <div class="qr-code-container">
+              <div class="qr-placeholder">
+                <p>QR Code PIX</p>
+                <button onclick="gerarQRCode()" class="botao-gerar-qr">Gerar QR Code</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Configuração de Conta Empresarial -->
+          <div class="config-empresarial" id="configEmpresarial" style="display: none;">
+            <h4>🔧 Configuração da Conta Empresarial</h4>
+            <form class="form-config-empresarial">
+              <div class="config-section">
+                <h5>Dados PIX</h5>
+                <label for="pixChave">Chave PIX:</label>
+                <input type="email" id="pixChave" name="pixChave" placeholder="email@exemplo.com" value="isadora.felipe.casamento@gmail.com">
+                
+                <label for="pixTitular">Nome do Titular:</label>
+                <input type="text" id="pixTitular" name="pixTitular" placeholder="Nome completo" value="Isadora Silva Felipe Santos">
+                
+                <label for="pixInstituicao">Instituição Financeira:</label>
+                <select id="pixInstituicao" name="pixInstituicao">
+                  <option value="">Selecione o banco</option>
+                  <option value="001">Banco do Brasil</option>
+                  <option value="341">Itaú</option>
+                  <option value="237">Bradesco</option>
+                  <option value="104">Caixa Econômica Federal</option>
+                  <option value="033">Santander</option>
+                  <option value="260">Nu Pagamentos</option>
+                  <option value="077">Banco Inter</option>
+                </select>
+              </div>
+              
+              <div class="config-section">
+                <h5>Configurações de Recebimento</h5>
+                <label for="valorSugerido">Valor Sugerido (R$):</label>
+                <input type="number" id="valorSugerido" name="valorSugerido" placeholder="100.00" step="0.01">
+                
+                <label for="mensagemPix">Mensagem PIX:</label>
+                <textarea id="mensagemPix" name="mensagemPix" placeholder="Casamento Isadora e Felipe - Obrigado pelo carinho!"></textarea>
+              </div>
+              
+              <div class="config-buttons">
+                <button type="button" onclick="salvarConfiguracao()" class="botao-salvar">Salvar Configuração</button>
+                <button type="button" onclick="resetarConfiguracao()" class="botao-reset">Resetar</button>
+              </div>
+            </form>
+          </div>
+          
+          <button onclick="toggleConfigEmpresarial()" class="botao-config" id="botaoConfig">
+            ⚙️ Configurar Conta Empresarial
+          </button>
+        </div>
       </div>
     </section>
     <section id="dicas">

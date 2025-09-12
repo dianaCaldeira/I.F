@@ -157,3 +157,142 @@ document.addEventListener('DOMContentLoaded', function () {
 
     tornarFechamentoClicavel();
 });
+
+// Funções para Conta Empresarial
+function copiarPix() {
+    const pixKey = document.getElementById('pixKey').textContent;
+    navigator.clipboard.writeText(pixKey).then(function() {
+        alert('Chave PIX copiada para a área de transferência!');
+    }).catch(function(err) {
+        console.error('Erro ao copiar: ', err);
+        // Fallback para navegadores mais antigos
+        const textArea = document.createElement('textarea');
+        textArea.value = pixKey;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        alert('Chave PIX copiada!');
+    });
+}
+
+function gerarQRCode() {
+    const pixKey = document.getElementById('pixKey').textContent;
+    const valor = document.getElementById('valorSugerido').value || '100.00';
+    const mensagem = document.getElementById('mensagemPix').value || 'Casamento Isadora e Felipe';
+    
+    // Simulação de geração de QR Code (em um caso real, você usaria uma API como a do Banco Central)
+    const qrContainer = document.querySelector('.qr-placeholder');
+    qrContainer.innerHTML = `
+        <div class="qr-code-generated">
+            <p>QR Code PIX Gerado</p>
+            <div class="qr-mock">📱 QR CODE</div>
+            <p class="qr-info">Valor: R$ ${valor}</p>
+            <p class="qr-info">Chave: ${pixKey}</p>
+            <button onclick="resetarQRCode()" class="botao-reset-qr">Gerar Novo</button>
+        </div>
+    `;
+    
+    alert('QR Code PIX gerado com sucesso!');
+}
+
+function resetarQRCode() {
+    const qrContainer = document.querySelector('.qr-placeholder');
+    qrContainer.innerHTML = `
+        <p>QR Code PIX</p>
+        <button onclick="gerarQRCode()" class="botao-gerar-qr">Gerar QR Code</button>
+    `;
+}
+
+function toggleConfigEmpresarial() {
+    const configDiv = document.getElementById('configEmpresarial');
+    const botao = document.getElementById('botaoConfig');
+    
+    if (configDiv.style.display === 'none' || configDiv.style.display === '') {
+        configDiv.style.display = 'block';
+        botao.textContent = '🔼 Ocultar Configuração';
+        botao.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+        configDiv.style.display = 'none';
+        botao.textContent = '⚙️ Configurar Conta Empresarial';
+    }
+}
+
+function salvarConfiguracao() {
+    const pixChave = document.getElementById('pixChave').value;
+    const pixTitular = document.getElementById('pixTitular').value;
+    const pixInstituicao = document.getElementById('pixInstituicao').value;
+    const valorSugerido = document.getElementById('valorSugerido').value;
+    const mensagemPix = document.getElementById('mensagemPix').value;
+    
+    if (!pixChave || !pixTitular) {
+        alert('Por favor, preencha pelo menos a chave PIX e o nome do titular.');
+        return;
+    }
+    
+    // Salvar configurações no localStorage
+    const config = {
+        pixChave,
+        pixTitular,
+        pixInstituicao,
+        valorSugerido,
+        mensagemPix,
+        dataUltimaAtualizacao: new Date().toISOString()
+    };
+    
+    localStorage.setItem('configContaEmpresarial', JSON.stringify(config));
+    
+    // Atualizar a chave PIX exibida
+    document.getElementById('pixKey').textContent = pixChave;
+    
+    alert('Configuração da conta empresarial salva com sucesso!');
+    
+    // Ocultar o formulário de configuração
+    toggleConfigEmpresarial();
+}
+
+function resetarConfiguracao() {
+    if (confirm('Tem certeza que deseja resetar todas as configurações?')) {
+        localStorage.removeItem('configContaEmpresarial');
+        
+        // Resetar valores padrão
+        document.getElementById('pixChave').value = 'isadora.felipe.casamento@gmail.com';
+        document.getElementById('pixTitular').value = 'Isadora Silva Felipe Santos';
+        document.getElementById('pixInstituicao').value = '';
+        document.getElementById('valorSugerido').value = '';
+        document.getElementById('mensagemPix').value = '';
+        
+        // Atualizar a chave PIX exibida
+        document.getElementById('pixKey').textContent = 'isadora.felipe.casamento@gmail.com';
+        
+        alert('Configurações resetadas para os valores padrão.');
+    }
+}
+
+function carregarConfiguracao() {
+    const configSalva = localStorage.getItem('configContaEmpresarial');
+    if (configSalva) {
+        try {
+            const config = JSON.parse(configSalva);
+            
+            document.getElementById('pixChave').value = config.pixChave || '';
+            document.getElementById('pixTitular').value = config.pixTitular || '';
+            document.getElementById('pixInstituicao').value = config.pixInstituicao || '';
+            document.getElementById('valorSugerido').value = config.valorSugerido || '';
+            document.getElementById('mensagemPix').value = config.mensagemPix || '';
+            
+            // Atualizar a chave PIX exibida
+            if (config.pixChave) {
+                document.getElementById('pixKey').textContent = config.pixChave;
+            }
+        } catch (error) {
+            console.error('Erro ao carregar configuração:', error);
+        }
+    }
+}
+
+// Carregar configuração quando a página carregar
+document.addEventListener('DOMContentLoaded', function() {
+    // Aguardar um pequeno delay para garantir que todos os elementos estejam carregados
+    setTimeout(carregarConfiguracao, 500);
+});

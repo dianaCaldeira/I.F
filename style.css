@@ -1153,3 +1153,221 @@ h3 {
         display: none;
     }
 }
+
+/* Estilos para Conta Empresarial */
+.conta-empresarial {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    border: 2px solid #e9ecef;
+}
+
+.conta-empresarial h3 {
+    color: #005981;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.pix-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 30px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.pix-item {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pix-info p {
+    margin: 10px 0;
+    color: #005981;
+    font-weight: bold;
+}
+
+.pix-key {
+    background-color: #e9ecef;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+    font-family: monospace;
+    color: #495057;
+    border: 1px solid #ced4da;
+    word-break: break-all;
+}
+
+.qr-code-container {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+}
+
+.qr-placeholder, .qr-code-generated {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.qr-mock {
+    font-size: 3rem;
+    margin: 20px 0;
+    color: #005981;
+}
+
+.qr-info {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin: 5px 0;
+}
+
+/* Botões da seção PIX */
+.botao-copiar, .botao-gerar-qr, .botao-reset-qr, .botao-config, .botao-salvar, .botao-reset {
+    background-color: #005981;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin: 10px 5px;
+    font-family: 'TextoFonte', Arial, sans-serif;
+}
+
+.botao-copiar:hover, .botao-gerar-qr:hover, .botao-reset-qr:hover, .botao-config:hover, .botao-salvar:hover, .botao-reset:hover {
+    background-color: #003f62;
+    transform: translateY(-2px);
+}
+
+.botao-config {
+    background-color: #28a745;
+    font-size: 1.1rem;
+    padding: 15px 25px;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.botao-config:hover {
+    background-color: #218838;
+}
+
+.botao-reset {
+    background-color: #dc3545;
+}
+
+.botao-reset:hover {
+    background-color: #c82333;
+}
+
+/* Formulário de Configuração Empresarial */
+.config-empresarial {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #005981;
+}
+
+.config-empresarial h4 {
+    color: #005981;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.config-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.config-section h5 {
+    color: #005981;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #005981;
+    padding-bottom: 10px;
+}
+
+.form-config-empresarial label {
+    display: block;
+    margin: 15px 0 5px 0;
+    color: #005981;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.form-config-empresarial input, 
+.form-config-empresarial select, 
+.form-config-empresarial textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'TextoFonte', Arial, sans-serif;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-config-empresarial input:focus, 
+.form-config-empresarial select:focus, 
+.form-config-empresarial textarea:focus {
+    outline: none;
+    border-color: #005981;
+    box-shadow: 0 0 5px rgba(0, 89, 129, 0.3);
+}
+
+.form-config-empresarial textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.config-buttons {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #e9ecef;
+}
+
+/* Responsividade para Conta Empresarial */
+@media screen and (max-width: 768px) {
+    .pix-options {
+        flex-direction: column;
+    }
+    
+    .pix-item {
+        min-width: 100%;
+    }
+    
+    .conta-empresarial {
+        padding: 20px;
+        margin: 20px 10px;
+    }
+    
+    .config-empresarial {
+        padding: 20px;
+    }
+    
+    .config-section {
+        padding: 15px;
+    }
+    
+    .qr-mock {
+        font-size: 2rem;
+    }
+}
