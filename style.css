@@ -1,3 +1,8 @@
+/* Garantir cor correta para info-vans */
+.programacao-container .info-vans p, #programacao .info-vans p, .info-vans p {
+    color: #808285 !important;
+    background: fefaef;
+}
 /* style.css */
 
 /* Definição de fontes personalizadas */
